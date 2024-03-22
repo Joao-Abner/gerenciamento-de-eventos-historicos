@@ -1,6 +1,6 @@
 # Gerenciamento de Eventos Históricos
 
-Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web sobre organizar e mostrar eventos importantes da história.
+Este projeto tem como objetivo implementar progressivamente uma aplicação web sobre organizar e mostrar eventos importantes da história.
 
 ## Endereço de Deploy - GitHub Pages
 
