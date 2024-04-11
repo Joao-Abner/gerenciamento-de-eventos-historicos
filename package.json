@@ -1,0 +1,15 @@
+{
+  "name": "gerenciamento-de-eventos-historicos",
+  "version": "1.0.0",
+  "description": "Este projeto tem como objetivo implementar progressivamente uma aplicação web sobre organizar e mostrar eventos importantes da história.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "João Abner Pereira de Almeida",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.7.1"
+  }
+}
