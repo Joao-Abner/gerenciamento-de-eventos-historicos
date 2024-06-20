@@ -1,0 +1,89 @@
+@import url("./vars.css");
+
+/* Estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Navbar Styles */
+.navbar {
+  background: var(--klistapp-jacksons-purple);
+  padding: 9px 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: space-between;
+  height: 51px;
+  position: relative;
+}
+
+/* Button and Icon Styles */
+.button,
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Text Styles */
+.event-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--klistapp-nero);
+  font-family: "Actor-Regular", sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 16px;
+  font-weight: 400;
+  position: relative;
+  max-width: 66px;
+}
+
+.select-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--klistapp-nero);
+  background-color: var(--klistapp-jacksons-purple);
+  font-family: "Actor-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 200;
+  position: relative;
+  max-width: 66px;
+}
+
+.select-button {
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+}
