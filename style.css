@@ -13,20 +13,20 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 75rem;
   margin: auto;
 }
 
 /* Navbar Styles */
 .navbar {
   background: var(--klistapp-jacksons-purple);
-  padding: 9px 8px;
+  padding: 0.5625rem 0.5rem;
   display: flex;
   flex-direction: row;
-  gap: 0px;
+  gap: 0rem;
   align-items: center;
   justify-content: space-between;
-  height: 51px;
+  height: 3.1875rem;
   position: relative;
 }
 
@@ -37,29 +37,53 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   position: relative;
 }
 
-.icon {
-  width: 16px;
-  height: 16px;
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+.bi {
+  color: var(--klistapp-nero); /* Cor do ícone */
+  background-color: transparent; /* Fundo do ícone */
+}
+
+.menu-icon {
+  border: none;
+  cursor: pointer;
 }
 
 /* Text Styles */
+.title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
 .event-title {
+  color: var(--klistapp-nero, #ffffff);
+  text-align: left;
+  font-family: "Actor-Regular", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  position: relative;
+  max-width: 13.4612rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: var(--klistapp-nero);
-  font-family: "Actor-Regular", sans-serif;
-  font-size: 16px;
-  text-transform: uppercase;
-  line-height: 16px;
-  font-weight: 400;
-  position: relative;
-  max-width: 66px;
+  justify-content: flex-start;
 }
 
 .select-text {
@@ -69,11 +93,11 @@ body {
   color: var(--klistapp-nero);
   background-color: var(--klistapp-jacksons-purple);
   font-family: "Actor-Regular", sans-serif;
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
   font-weight: 200;
   position: relative;
-  max-width: 66px;
+  max-width: 4.125rem;
 }
 
 .select-button {
