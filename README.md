@@ -8,7 +8,7 @@ Este projeto tem como objetivo implementar progressivamente uma aplicação web 
 
 ## Protótipo
 
-`em desenvolvimento`
+https://www.figma.com/design/fPd7TJurYzAqUGI1rGBsaf/Gerenciamento-de-Eventos-Hist%C3%B3ricos?node-id=0-1
 
 ## Checklist
 
