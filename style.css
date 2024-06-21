@@ -1,0 +1,104 @@
+@import url("./vars.css");
+
+/* Estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 75rem;
+  margin: auto;
+}
+
+/* Navbar Styles */
+.navbar {
+  background: var(--klistapp-jacksons-purple);
+  padding: 0.5625rem 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0rem;
+  align-items: center;
+  justify-content: space-between;
+  height: 5.125rem;
+  position: relative;
+}
+
+/* Button and Icon Styles */
+
+.menu-button,
+.share-button,
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+.bi {
+  color: var(--klistapp-nero); /* Cor do ícone */
+  background-color: transparent; /* Fundo do ícone */
+}
+
+.menu-icon {
+  border: none;
+  cursor: pointer;
+}
+
+/* Text Styles */
+.title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.event-title {
+  color: var(--klistapp-nero, #ffffff);
+  text-align: left;
+  font-family: "Actor-Regular", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  position: relative;
+  max-width: 13.4612rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.search-container {
+  position: relative;
+  display: inline-block;
+}
+.search-input {
+  font-size: 1.125rem;
+}
+.search-button i {
+  font-size: 1.125rem;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .search-input {
+    font-size: 0.9375rem;
+  }
+
+  .bi {
+    font-size: 0.9375rem;
+  }
+}
