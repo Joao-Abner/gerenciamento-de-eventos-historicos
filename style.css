@@ -94,7 +94,7 @@ body {
 /* Estilo geral para o menu lateral esquerdo */
 .menu-lateral-esquerdo {
   width: 15.625rem;
-  height: 694px;
+  height: 43.375rem;
   position: relative;
   background-color: #f4f4f4;
 }
@@ -186,6 +186,6 @@ body {
   }
 
   .menu-lateral-esquerdo {
-    height: 868px;
+    height: 54.25rem;
   }
 }
