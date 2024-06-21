@@ -88,6 +88,70 @@ body {
   font-size: 1.125rem;
 }
 
+/* Estilo geral para o menu lateral esquerdo */
+.menu-lateral-esquerdo {
+  width: 250px;
+  height: 694px;
+  position: relative;
+  background-color: #f4f4f4; /* Cor de fundo neutra */
+}
+
+/* Estilo para o conteúdo principal do menu */
+.menu-principal {
+  padding: 20px;
+}
+
+.menu-lateral-esquerdo.oculto {
+  display: none;
+}
+
+/* Estilo para a navegação */
+.navegacao ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.navegacao li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilo para o estado ativo */
+.active {
+  color: var(--klistapp-nero);
+  background-color: var(--klistapp-jacksons-purple);
+}
+
+/* Estilo para os botões */
+.new-event-button,
+.star-button,
+.menu-all-button {
+  color: #333333;
+  background-color: transparent; /* Alterado para transparente */
+}
+
+/* Estilo para os ícones dentro dos botões */
+.new-event-button i,
+.star-button i,
+.menu-all-button i {
+  color: inherit; /* Cor escura para os ícones */
+}
+
+/* Opções para estilizar o texto do botão */
+.new-event-button:hover,
+.star-button:hover,
+.menu-all-button:hover {
+  color: var(--klistapp-nero);
+  background-color: var(--klistapp-bay-of-many);
+}
+
+/* Opções para estilizar o botão ativo */
+.active:hover {
+  color: var(--klistapp-nero);
+  background-color: var(--klistapp-jacksons-purple);
+}
+
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
   .navbar {
