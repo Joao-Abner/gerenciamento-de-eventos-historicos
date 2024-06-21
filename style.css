@@ -90,7 +90,7 @@ body {
 
 /* Estilo geral para o menu lateral esquerdo */
 .menu-lateral-esquerdo {
-  width: 250px;
+  width: 15.625rem;
   height: 694px;
   position: relative;
   background-color: #f4f4f4; /* Cor de fundo neutra */
@@ -98,7 +98,7 @@ body {
 
 /* Estilo para o conteúdo principal do menu */
 .menu-principal {
-  padding: 20px;
+  padding: 1.25rem;
 }
 
 .menu-lateral-esquerdo.oculto {
@@ -112,7 +112,7 @@ body {
 }
 
 .navegacao li {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   display: flex;
   align-items: center;
 }
@@ -152,6 +152,24 @@ body {
   background-color: var(--klistapp-jacksons-purple);
 }
 
+.menu-lateral-esquerdo {
+  position: relative; /* Garante que a logo possa ser posicionada absolutamente dentro dele */
+}
+
+.logo-container {
+  position: absolute;
+  bottom: 0; /* Posiciona a logo no rodapé */
+  width: 100%; /* Ajusta a largura para preencher o menu lateral */
+  display: flex;
+  justify-content: center; /* Centraliza a logo horizontalmente */
+  padding-bottom: 0.625rem; /* Adiciona um pouco de espaço abaixo da logo */
+}
+
+.logo-container img {
+  max-width: 100%; /* Garante que a logo não ultrapasse a largura do container */
+  height: auto; /* Mantém a proporção da logo */
+}
+
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
   .navbar {
@@ -164,5 +182,13 @@ body {
 
   .bi {
     font-size: 0.9375rem;
+  }
+
+  .logo-container {
+    bottom: 0.625rem;
+  }
+
+  .menu-lateral-esquerdo {
+    height: 37.125rem;
   }
 }
