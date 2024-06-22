@@ -35,3 +35,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// função com o Jquery para o modal
+$(function () {
+  // Encontre o botão "Novo Evento" no menu esquerdo
+  $(".new-event-button").on("click", function () {
+    // Abra o modal
+    $("#novoEventoModal").modal("show");
+  });
+});
+
+// Requisição para o API ninjas
+// const apiKey = "";
+// const apiUrl = `https://api.api-ninjas.com/v1/historicalevents?key=${apiKey}`;
+
+// fetch(apiUrl)
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log(data); // Verifica os dados no console
+//     displayHistoricalEvents(data);
+//   })
+//   .catch((error) => console.error("Erro:", error));
+
+// function displayHistoricalEvents(data) {
+//   const eventsContainer = document.getElementById("historicalEvents");
+//   data.forEach((event) => {
+//     const eventElement = document.createElement("p");
+//     eventElement.textContent = `${event.name}: ${event.description}`; // Ajuste conforme a estrutura dos seus dados
+//     eventsContainer.appendChild(eventElement);
+//   });
+// }

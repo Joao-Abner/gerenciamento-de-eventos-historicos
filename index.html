@@ -33,6 +33,7 @@
             </div>
         </nav>
 
+        <!-- menu lateral esquerdo -->
         <div class="menu-lateral-esquerdo">
             <div class="menu-principal">
                 <!-- Navegação -->
@@ -55,7 +56,34 @@
                     alt="Logo HistorySync">
             </div>
         </div>
+
+        <!-- Modal Structure -->
+        <div class="modal fade" id="novoEventoModal" tabindex="-1" role="dialog" aria-labelledby="novoEventoModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="novoEventoModalLabel">Novo Evento</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Conteúdo do modal vai aqui -->
+                        <input type="text" class="form-control" placeholder="Digite o nome do evento...">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </header>
+    <div id="historicalEvents"></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./script.js"></script>
 
