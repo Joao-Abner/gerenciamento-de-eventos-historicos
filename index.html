@@ -67,16 +67,37 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                     </div>
                     <div class="modal-body">
-                        <!-- Conteúdo do modal vai aqui -->
-                        <input type="text" class="form-control" placeholder="Digite o nome do evento...">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary">Buscar</button>
+                        <form id="eventoForm" class="d-flex flex-column">
+                            <div class="mb-3">
+                                <label for="eventoTitulo" class="form-label">Título:</label>
+                                <input type="text" class="form-control" id="eventoTitulo" pattern="[A-Za-z\s]{3,50}"
+                                    title="Deve conter entre 3 a 50 caracteres e somente letras e espaços." required
+                                    placeholder="Digite o título do evento aqui...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="eventoAno" class="form-label">Ano:</label>
+                                <input type="text" class="form-control" id="eventoAno" pattern="-?\d{4}"
+                                    title="Insira um ano válido com 4 dígitos, incluindo valores negativos." required
+                                    placeholder="AAAA ou -AAAA">
+                            </div>
+                            <div class="mb-3">
+                                <label for="eventoDescricao" class="form-label">Descrição do evento histórico:</label>
+                                <textarea class="form-control" id="eventoDescricao" rows="5" pattern="[A-Za-z0-9\s]+"
+                                    title="A descrição é obrigatória. Letras, números e espaços são permitidos."
+                                    required placeholder="Descreva o evento histórico aqui..."></textarea>
+                                <p class="errormsg" style="display:none;">Descrição inválida. Só são permitidos letras,
+                                    números e espaços.</p>
+                            </div>
+                            <!-- Botão de submissão alinhado à direita -->
+                            <button type="submit" class="btn btn-primary mt-auto save-button">Salvar</button>
+                        </form>
+
                     </div>
                 </div>
             </div>
         </div>
+
+
 
 
     </header>

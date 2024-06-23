@@ -94,7 +94,7 @@ body {
 /* Estilo geral para o menu lateral esquerdo */
 .menu-lateral-esquerdo {
   width: 15.625rem;
-  height: 43.375rem;
+  height: 43.75rem;
   position: relative;
   background-color: #f4f4f4;
 }
@@ -105,7 +105,7 @@ body {
 }
 
 .menu-lateral-esquerdo.oculto {
-  visibility: hidden; /* Ou opacity: 0; dependendo do comportamento desejado */
+  visibility: hidden;
 }
 
 /* Estilo para a navegação */
@@ -121,7 +121,7 @@ body {
 }
 
 /* Estilo para o estado ativo */
-.active {
+.save-button.active {
   color: var(--klistapp-nero);
   background-color: var(--klistapp-jacksons-purple);
 }
@@ -129,7 +129,8 @@ body {
 /* Estilo para os botões */
 .new-event-button,
 .star-button,
-.menu-all-button {
+.menu-all-button,
+.save-button {
   color: #333333;
   background-color: transparent;
 }
@@ -144,7 +145,8 @@ body {
 /* Opções para estilizar o texto do botão */
 .new-event-button:hover,
 .star-button:hover,
-.menu-all-button:hover {
+.menu-all-button:hover,
+.save-button:hover {
   color: var(--klistapp-nero);
   background-color: var(--klistapp-bay-of-many);
 }
@@ -165,6 +167,14 @@ body {
 .logo-container img {
   max-width: 100%;
   height: auto;
+}
+
+.errormsg {
+  color: red;
+  padding: 0.625rem;
+  margin-top: 0.3125rem;
+  font-size: 0.875rem;
+  display: none;
 }
 
 /* Responsive Adjustments */
