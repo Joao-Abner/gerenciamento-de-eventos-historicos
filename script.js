@@ -37,13 +37,12 @@ function validaDescrizao(descricao) {
   return regex.test(descricao);
 }
 
-// Validações formulário Modal - Novo Evento
 document
   .getElementById("eventoForm")
   .addEventListener("submit", function (event) {
     event.preventDefault(); // Impede o comportamento padrão do formulário
 
-    // Validações customizadas
+    // Validações personalizadas
     const titulo = document.getElementById("eventoTitulo").value.trim();
     const anoInput = document.getElementById("eventoAno").value.trim();
     const descricao = document.getElementById("eventoDescricao").value.trim();
@@ -53,7 +52,6 @@ document
       const anoNumero = parseFloat(anoInput);
       // Usa Math.sign para verificar se o ano é negativo
       if (Math.sign(anoNumero) === -1 && descricao.trim() === "") {
-        // Corrigindo a condição para verificar se a descrição está vazia
         alert(
           "Eventos históricos podem ter anos negativos, mas é necessário fornecer uma descrição."
         );
@@ -70,8 +68,17 @@ document
       return false; // Retorna false para impedir a submissão do formulário
     }
 
-    // Se todas as validações passarem, prosseguimos com a busca ou outra ação
+    // Se todas as validações passarem
     console.log("Formulário válido");
 
-    // Aqui você pode adicionar o código para realizar a busca ou outra ação
+    // Armazena como um único objeto
+    const eventoFormDados = {
+      titulo,
+      anoInput,
+      descricao,
+    };
+
+    localStorage.setItem("eventoFormDados", JSON.stringify(eventoFormDados));
+
+    console.log("Dados do formulário armazenados no localStorage");
   });
