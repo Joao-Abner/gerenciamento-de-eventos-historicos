@@ -31,6 +31,13 @@ $(function () {
   });
 });
 
+// transição menu-lateral esquerdo
+document
+  .querySelector(".menu-lateral-esquerdo")
+  .addEventListener("click", function () {
+    this.classList.toggle("oculto");
+  });
+
 // Função para validar a descrição, permitindo apenas letras, números e espaços
 function validaDescrizao(descricao) {
   const regex = /^[A-Za-z0-9\s]+$/;

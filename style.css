@@ -98,6 +98,8 @@ body {
   position: relative;
   background-color: #f4f4f4;
   z-index: 1000;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
 }
 
 /* Estilo para o conteúdo principal do menu */
@@ -105,8 +107,9 @@ body {
   padding: 1.25rem;
 }
 
+/* Classe para ocultar o menu lateral */
 .menu-lateral-esquerdo.oculto {
-  visibility: hidden;
+  transform: translateX(-110%); /* Move o menu lateral para fora da tela */
 }
 
 /* Estilo para a navegação */
@@ -134,6 +137,7 @@ body {
 .save-button {
   color: var(--klistapp-mine-shaft);
   background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
 }
 
 /* Estilo para os ícones dentro dos botões */
