@@ -39,7 +39,7 @@ function validaDescrizao(descricao) {
 
 document
   .getElementById("eventoForm")
-  .addEventListener("submit", function (event) {
+  .addEventListener("submit", async function (event) {
     event.preventDefault(); // Impede o comportamento padrão do formulário
 
     // Validações personalizadas
@@ -81,4 +81,17 @@ document
     localStorage.setItem("eventoFormDados", JSON.stringify(eventoFormDados));
 
     console.log("Dados do formulário armazenados no localStorage");
+
+    try {
+      const response = await fetch("http://localhost:3000/posts", {
+        // Envia para a URL do JSON Server
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ eventoFormDados }),
+      });
+    } catch (error) {
+      console.error(error.message);
+    }
   });
