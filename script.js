@@ -95,3 +95,24 @@ document
       console.error(error.message);
     }
   });
+
+// Função para ler e exibir os dados do localStorage
+window.addEventListener("DOMContentLoaded", (event) => {
+  function exibirDadosLocalStorage() {
+    const dadosArmazenados = localStorage.getItem("eventoFormDados");
+    if (dadosArmazenados) {
+      const dadosObjeto = JSON.parse(dadosArmazenados);
+      const divEventos = document.getElementById("historicalEvents");
+      divEventos.innerHTML = ""; // Limpa a div antes de adicionar novos dados
+      Object.entries(dadosObjeto).forEach(([chave, valor]) => {
+        const paragrafo = document.createElement("p");
+        paragrafo.textContent = `${chave}: ${valor}`;
+        divEventos.appendChild(paragrafo);
+      });
+    } else {
+      divEventos.innerHTML = "<p>Nenhum dado encontrado.</p>";
+    }
+  }
+
+  exibirDadosLocalStorage();
+});

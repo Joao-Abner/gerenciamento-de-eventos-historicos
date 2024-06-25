@@ -97,6 +97,7 @@ body {
   height: 43.75rem;
   position: relative;
   background-color: #f4f4f4;
+  z-index: 1000;
 }
 
 /* Estilo para o conteúdo principal do menu */
@@ -131,7 +132,7 @@ body {
 .star-button,
 .menu-all-button,
 .save-button {
-  color: #333333;
+  color: var(--klistapp-mine-shaft);
   background-color: transparent;
 }
 
@@ -175,6 +176,72 @@ body {
   margin-top: 0.3125rem;
   font-size: 0.875rem;
   display: none;
+}
+
+#historicalEvents {
+  /* Define a largura máxima e margens para centralizar e dar espaço */
+  max-width: 75rem;
+  margin: 2rem auto;
+
+  /* Adiciona uma sombra suave para destacar a div */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* Define a altura mínima para garantir que a div tenha algum espaço vertical */
+  min-height: 20rem;
+
+  /* Configura a cor de fundo para combinar com o tema do site */
+  background-color: var(--klistapp-jacksons-purple);
+
+  /* Define a tipografia e cores do texto para complementar o design */
+  color: var(--klistapp-nero, #ffffff);
+  font-family: "Arial", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+
+  /* Adiciona bordas arredondadas para um aspecto mais moderno */
+  border-radius: 0.5rem;
+
+  /* Configura o overflow para scroll se os conteúdos excederem a altura da div */
+  overflow-y: auto;
+}
+
+#historicalEvents::-webkit-scrollbar {
+  /* Esconde a barra de rolagem no WebKit browsers */
+  width: 0.375rem;
+}
+
+#historicalEvents::-webkit-scrollbar-thumb {
+  /* Define a aparência da barra de rolagem */
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.1875rem;
+}
+
+#historicalEvents::-webkit-scrollbar-track {
+  /* Define a aparência do rastreador da barra de rolagem */
+  background-color: var(--klistapp-jacksons-purple);
+}
+
+#historicalEvents {
+  /* Posicionamento absoluto para centralizar na tela */
+  position: absolute;
+  top: 38%; /* Posiciona o topo da div no meio da tela */
+  left: 60%; /* Posiciona a esquerda da div no meio da tela */
+
+  /* Transforma para corrigir o centro de referência */
+  transform: translate(-50%, -50%);
+
+  /* Define a largura e altura para controlar o tamanho da div */
+  width: 70%; /* Ajuste conforme necessário */
+  height: 60%; /* Ajuste conforme necessário */
+
+  /* Estabelece o fundo claro e a fonte escura */
+  background-color: var(--klistapp-nero); /* Cor de fundo clara */
+  color: var(--klistapp-mine-shaft); /* Cor de fonte escura */
+
+  /* Outras propriedades de estilo conforme necessário */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Adjustments */
