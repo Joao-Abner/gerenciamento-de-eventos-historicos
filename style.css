@@ -229,7 +229,7 @@ body {
   /* Posicionamento absoluto para centralizar na tela */
   position: absolute;
   top: 38%; /* Posiciona o topo da div no meio da tela */
-  left: 60%; /* Posiciona a esquerda da div no meio da tela */
+  left: 53%; /* Posiciona a esquerda da div no meio da tela */
 
   /* Transforma para corrigir o centro de referência */
   transform: translate(-50%, -50%);
