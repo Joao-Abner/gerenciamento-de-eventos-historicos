@@ -132,7 +132,7 @@ body {
 
 /* Estilo para os botões */
 .new-event-button,
-.star-button,
+.search-events,
 .menu-all-button,
 .save-button {
   color: var(--klistapp-mine-shaft);
@@ -142,14 +142,14 @@ body {
 
 /* Estilo para os ícones dentro dos botões */
 .new-event-button i,
-.star-button i,
+.search-events i,
 .menu-all-button i {
   color: inherit;
 }
 
 /* Opções para estilizar o texto do botão */
 .new-event-button:hover,
-.star-button:hover,
+.search-events:hover,
 .menu-all-button:hover,
 .save-button:hover {
   color: var(--klistapp-nero);
