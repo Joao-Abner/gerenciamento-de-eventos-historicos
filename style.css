@@ -45,6 +45,12 @@ body {
   outline: none;
 }
 
+.delete-btn {
+  padding: 3px;
+  border-color: var(--klistapp-jacksons-purple);
+  border-radius: var(--bs-border-radius);
+}
+
 .bi {
   color: var(--klistapp-nero);
   background-color: transparent;
@@ -134,7 +140,8 @@ body {
 .new-event-button,
 .search-events,
 .menu-all-button,
-.save-button {
+.save-button,
+.delete-btn {
   color: var(--klistapp-mine-shaft);
   background-color: transparent;
   transition: background-color 0.3s ease-in-out;
@@ -151,7 +158,8 @@ body {
 .new-event-button:hover,
 .search-events:hover,
 .menu-all-button:hover,
-.save-button:hover {
+.save-button:hover,
+.delete-btn:hover {
   color: var(--klistapp-nero);
   background-color: var(--klistapp-bay-of-many);
 }

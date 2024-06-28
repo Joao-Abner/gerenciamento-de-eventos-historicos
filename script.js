@@ -69,12 +69,6 @@ document
       return false; // Retorna false para impedir a submissão do formulário
     }
 
-    // Valida a descrição
-    // if (!validaDescrizao(descricao)) {
-    //   document.querySelector(".errormsg").style.display = "block"; // Mostra a mensagem de erro
-    //   return false; // Retorna false para impedir a submissão do formulário
-    // }
-
     // Se todas as validações passarem
     console.log("Formulário válido");
 
@@ -152,8 +146,33 @@ fetch("http://localhost:3000/events")
       elementoContainer.appendChild(yearInputElement); // Adiciona o elemento de ano de entrada
       elementoContainer.appendChild(descriptionElement);
 
+      // Adiciona botão de deleção
+      const deleteButton = document.createElement("button");
+      deleteButton.className = "delete-btn"; // Adiciona a classe 'delete-btn'
+      deleteButton.innerHTML = '<i class="bi bi-trash-fill"></i> Deletar';
+      deleteButton.textContent = "Deletar";
+      deleteButton.onclick = () => handleDelete(elemento.id); // Implemente esta função
+      elementoContainer.appendChild(deleteButton);
+
       // Adiciona o container à div principal
       historicalEventsDiv.appendChild(elementoContainer);
     });
   })
   .catch((error) => console.error("Erro ao carregar eventos:", error));
+
+function handleDelete(itemId) {
+  fetch(`http://localhost:3000/events/${itemId}`, {
+    method: "DELETE",
+  })
+    .then((response) => {
+      if (response.ok) {
+        // Remove o item da lista no frontend
+        const itemToRemove = document.getElementById(`item-${itemId}`);
+        itemToRemove.parentNode.removeChild(itemToRemove);
+        console.log("Item deletado com sucesso.");
+      } else {
+        console.error("Erro ao deletar item:", response.statusText);
+      }
+    })
+    .catch((error) => console.error("Erro ao deletar item:", error));
+}
