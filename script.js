@@ -39,10 +39,10 @@ document
   });
 
 // Função para validar a descrição, permitindo apenas letras, números e espaços
-function validaDescrizao(descricao) {
-  const regex = /^[A-Za-z0-9\s]+$/;
-  return regex.test(descricao);
-}
+// function validaDescrizao(descricao) {
+//   const regex = /^[A-Za-z0-9\ssáéíóúâêôç]+$/;
+//   return regex.test(descricao);
+// }
 
 document
   .getElementById("eventoForm")
@@ -70,10 +70,10 @@ document
     }
 
     // Valida a descrição
-    if (!validaDescrizao(descricao)) {
-      document.querySelector(".errormsg").style.display = "block"; // Mostra a mensagem de erro
-      return false; // Retorna false para impedir a submissão do formulário
-    }
+    // if (!validaDescrizao(descricao)) {
+    //   document.querySelector(".errormsg").style.display = "block"; // Mostra a mensagem de erro
+    //   return false; // Retorna false para impedir a submissão do formulário
+    // }
 
     // Se todas as validações passarem
     console.log("Formulário válido");

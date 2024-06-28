@@ -76,7 +76,8 @@
                         <form id="eventoForm" class="d-flex flex-column">
                             <div class="mb-3">
                                 <label for="eventoTitulo" class="form-label">Título:</label>
-                                <input type="text" class="form-control" id="eventoTitulo" pattern="[A-Za-z\s]{3,50}"
+                                <input type="text" class="form-control" id="eventoTitulo"
+                                    pattern="[A-Za-z\sáéíóúâêôç]{3,50}"
                                     title="Deve conter entre 3 a 50 caracteres e somente letras e espaços." required
                                     placeholder="Digite o título do evento aqui...">
                             </div>
@@ -88,7 +89,8 @@
                             </div>
                             <div class="mb-3">
                                 <label for="eventoDescricao" class="form-label">Descrição do evento histórico:</label>
-                                <textarea class="form-control" id="eventoDescricao" rows="5" pattern="[A-Za-z0-9\s]+"
+                                <textarea class="form-control" id="eventoDescricao" rows="5"
+                                    pattern="[A-Za-z0-9\sáéíóúâêôç]+"
                                     title="A descrição é obrigatória. Letras, números e espaços são permitidos."
                                     required placeholder="Descreva o evento histórico aqui..."></textarea>
                                 <p class="errormsg" style="display:none;">Descrição inválida. Só são permitidos letras,
