@@ -66,8 +66,8 @@ body {
   position: relative;
   overflow: hidden;
 }
-
-.event-title {
+/* history-sync-tittle */
+.history-sync-tittle {
   color: var(--klistapp-nero, #ffffff);
   text-align: left;
   font-family: "Actor-Regular", sans-serif;
@@ -182,7 +182,8 @@ body {
   display: none;
 }
 
-#historicalEvents {
+#historicalEvents,
+#NewEvents-body-table {
   /* Define a largura máxima e margens para centralizar e dar espaço */
   max-width: 75rem;
   margin: 2rem auto;
@@ -209,23 +210,24 @@ body {
   overflow-y: auto;
 }
 
-#historicalEvents::-webkit-scrollbar {
+#historicalEvents:-webkit-scrollbar {
   /* Esconde a barra de rolagem no WebKit browsers */
   width: 0.375rem;
 }
 
-#historicalEvents::-webkit-scrollbar-thumb {
+#historicalEvents:-webkit-scrollbar-thumb {
   /* Define a aparência da barra de rolagem */
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 0.1875rem;
 }
 
-#historicalEvents::-webkit-scrollbar-track {
+#historicalEvents:-webkit-scrollbar-track {
   /* Define a aparência do rastreador da barra de rolagem */
   background-color: var(--klistapp-jacksons-purple);
 }
 
-#historicalEvents {
+#historicalEvents,
+#NewEvents-body-table {
   /* Posicionamento absoluto para centralizar na tela */
   position: absolute;
   top: 38%; /* Posiciona o topo da div no meio da tela */
@@ -246,6 +248,26 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#historicalEvents {
+  font-family: Arial, sans-serif;
+  margin-top: 20px;
+}
+.event-item {
+  background-color: #f9f9f9;
+  border-radius: 0.3125rem;
+  padding: 0.625rem;
+  margin-bottom: 0.625rem;
+}
+
+h3.event-title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: var(--klistapp-mine-shaft);
+}
+.event-description {
+  color: var(--klistapp-mine-shaft);
 }
 
 /* Responsive Adjustments */

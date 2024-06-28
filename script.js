@@ -90,7 +90,7 @@ document
     console.log("Dados do formulário armazenados no localStorage");
 
     try {
-      const response = await fetch("http://localhost:3000/posts", {
+      const response = await fetch("http://localhost:3000/events", {
         // Envia para a URL do JSON Server
         method: "POST",
         headers: {
@@ -104,22 +104,56 @@ document
   });
 
 // Função para ler e exibir os dados do localStorage
-window.addEventListener("DOMContentLoaded", (event) => {
-  function exibirDadosLocalStorage() {
-    const dadosArmazenados = localStorage.getItem("eventoFormDados");
-    if (dadosArmazenados) {
-      const dadosObjeto = JSON.parse(dadosArmazenados);
-      const divEventos = document.getElementById("historicalEvents");
-      divEventos.innerHTML = ""; // Limpa a div antes de adicionar novos dados
-      Object.entries(dadosObjeto).forEach(([chave, valor]) => {
-        const paragrafo = document.createElement("p");
-        paragrafo.textContent = `${chave}: ${valor}`;
-        divEventos.appendChild(paragrafo);
-      });
-    } else {
-      divEventos.innerHTML = "<p>Nenhum dado encontrado.</p>";
-    }
-  }
+// window.addEventListener("DOMContentLoaded", (event) => {
+//   function exibirDadosLocalStorage() {
+//     const dadosArmazenados = localStorage.getItem("eventoFormDados");
+//     if (dadosArmazenados) {
+//       const dadosObjeto = JSON.parse(dadosArmazenados);
+//       const divEventos = document.getElementById("historicalEvents");
+//       divEventos.innerHTML = ""; // Limpa a div antes de adicionar novos dados
+//       Object.entries(dadosObjeto).forEach(([chave, valor]) => {
+//         const paragrafo = document.createElement("p");
+//         paragrafo.textContent = `${chave}: ${valor}`;
+//         divEventos.appendChild(paragrafo);
+//       });
+//     } else {
+//       divEventos.innerHTML = "<p>Nenhum dado encontrado.</p>";
+//     }
+//   }
 
-  exibirDadosLocalStorage();
-});
+//   exibirDadosLocalStorage();
+// });
+
+fetch("http://localhost:3000/events")
+  .then((response) => response.json())
+  .then((data) => {
+    const historicalEventsDiv = document.getElementById("historicalEvents");
+    historicalEventsDiv.innerHTML = ""; // Limpa a div antes de adicionar novos dados
+    data.forEach((elemento) => {
+      // Cria um container para cada elemento
+      const elementoContainer = document.createElement("div");
+      elementoContainer.classList.add("event-item");
+
+      // Cria título, ano de entrada e descrição
+      const titleElement = document.createElement("h3");
+      titleElement.classList.add("event-title");
+      titleElement.textContent = elemento.eventoFormDados.titulo;
+
+      const yearInputElement = document.createElement("p");
+      yearInputElement.classList.add("event-year");
+      yearInputElement.textContent = elemento.eventoFormDados.anoInput; // Ajuste aqui
+
+      const descriptionElement = document.createElement("p");
+      descriptionElement.classList.add("event-description");
+      descriptionElement.textContent = elemento.eventoFormDados.descricao;
+
+      // Adiciona título, ano de entrada e descrição ao container
+      elementoContainer.appendChild(titleElement);
+      elementoContainer.appendChild(yearInputElement); // Adiciona o elemento de ano de entrada
+      elementoContainer.appendChild(descriptionElement);
+
+      // Adiciona o container à div principal
+      historicalEventsDiv.appendChild(elementoContainer);
+    });
+  })
+  .catch((error) => console.error("Erro ao carregar eventos:", error));
