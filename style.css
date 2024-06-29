@@ -210,7 +210,9 @@ h3.event-title {
 
 /* Responsividade */
 @media screen and (min-width: 600px) {
-  #ul-navegacao {
+  .new-event-button,
+  .search-events,
+  .menu-all-button {
     font-size: calc(1rem + 0.5vw);
   }
 
@@ -219,9 +221,11 @@ h3.event-title {
   }
 }
 
-@media screen and (min-width: 700px) {
-  #ul-navegacao {
-    font-size: calc(1rem + 0.5vw);
+@media screen and (min-width: 900px) {
+  .new-event-button,
+  .search-events,
+  .menu-all-button {
+    font-size: calc(1rem + 0.4vw);
   }
 
   #historicalEvents {
