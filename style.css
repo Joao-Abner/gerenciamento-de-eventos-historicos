@@ -190,8 +190,7 @@ body {
   display: none;
 }
 
-#historicalEvents,
-#NewEvents-body-table {
+#historicalEvents {
   /* Define a largura máxima e margens para centralizar e dar espaço */
   max-width: 75rem;
   margin: 2rem auto;
@@ -234,11 +233,10 @@ body {
   background-color: var(--klistapp-jacksons-purple);
 }
 
-#historicalEvents,
-#NewEvents-body-table {
+#historicalEvents {
   /* Posicionamento absoluto para centralizar na tela */
   position: absolute;
-  top: 38%; /* Posiciona o topo da div no meio da tela */
+  top: 53%; /* Posiciona o topo da div no meio da tela */
   left: 53%; /* Posiciona a esquerda da div no meio da tela */
 
   /* Transforma para corrigir o centro de referência */
@@ -246,7 +244,7 @@ body {
 
   /* Define a largura e altura para controlar o tamanho da div */
   width: 70%; /* Ajuste conforme necessário */
-  height: 60%; /* Ajuste conforme necessário */
+  height: 85%; /* Ajuste conforme necessário */
 
   /* Estabelece o fundo claro e a fonte escura */
   background-color: var(--klistapp-nero); /* Cor de fundo clara */
