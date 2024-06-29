@@ -122,6 +122,12 @@ fetch("http://localhost:3000/events")
   .then((response) => response.json())
   .then((data) => {
     const historicalEventsDiv = document.getElementById("historicalEvents");
+
+    // Cria um elemento de título e define seu conteúdo
+    const titleElement = document.createElement("h2"); // Escolha o nível de título apropriado
+    titleElement.textContent = "Eventos Históricos"; // Substitua por seu título de identificação
+    historicalEventsDiv.appendChild(titleElement); // Adiciona o título à div
+
     historicalEventsDiv.innerHTML = ""; // Limpa a div antes de adicionar novos dados
     data.forEach((elemento) => {
       // Cria um container para cada elemento
@@ -131,15 +137,15 @@ fetch("http://localhost:3000/events")
       // Cria título, ano de entrada e descrição
       const titleElement = document.createElement("h3");
       titleElement.classList.add("event-title");
-      titleElement.textContent = elemento.eventoFormDados.titulo;
+      titleElement.textContent = `Titulo: ${elemento.eventoFormDados.titulo}`;
 
       const yearInputElement = document.createElement("p");
       yearInputElement.classList.add("event-year");
-      yearInputElement.textContent = elemento.eventoFormDados.anoInput; // Ajuste aqui
+      yearInputElement.textContent = `Ano do Evento: ${elemento.eventoFormDados.anoInput}`; // Ajuste aqui
 
       const descriptionElement = document.createElement("p");
       descriptionElement.classList.add("event-description");
-      descriptionElement.textContent = elemento.eventoFormDados.descricao;
+      descriptionElement.textContent = `Descrição: ${elemento.eventoFormDados.descricao}`;
 
       // Adiciona título, ano de entrada e descrição ao container
       elementoContainer.appendChild(titleElement);
@@ -149,7 +155,6 @@ fetch("http://localhost:3000/events")
       // Adiciona botão de deleção
       const deleteButton = document.createElement("button");
       deleteButton.className = "delete-btn"; // Adiciona a classe 'delete-btn'
-      deleteButton.innerHTML = '<i class="bi bi-trash-fill"></i> Deletar';
       deleteButton.textContent = "Deletar";
       deleteButton.onclick = () => handleDelete(elemento.id); // Implemente esta função
       elementoContainer.appendChild(deleteButton);
