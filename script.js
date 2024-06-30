@@ -118,6 +118,7 @@ document
 //   exibirDadosLocalStorage();
 // });
 
+// Requisição para o JSON server
 fetch("http://localhost:3000/events")
   .then((response) => response.json())
   .then((data) => {
@@ -171,7 +172,7 @@ function handleDelete(itemId) {
   })
     .then((response) => {
       if (response.ok) {
-        // Remove o item da lista no frontend
+        // Remove o item da lista
         const itemToRemove = document.getElementById(`item-${itemId}`);
         itemToRemove.parentNode.removeChild(itemToRemove);
         console.log("Item deletado com sucesso.");
@@ -180,4 +181,75 @@ function handleDelete(itemId) {
       }
     })
     .catch((error) => console.error("Erro ao deletar item:", error));
+}
+
+// Seleciona o botão de busca
+const buttonSearchEvents = document.getElementById("search-events");
+
+// Adiciona um event listener ao botão
+buttonSearchEvents.addEventListener("click", function () {
+  // Mostra o modal
+  const modal = new bootstrap.Modal(
+    document.getElementById("buscarEventoModal")
+  );
+  modal.show();
+});
+
+// Seleciona o elemento do formulário
+const formularioBuscaEvento = document.getElementById("buscarEventoForm");
+
+// Adiciona um event listener ao formulário
+formularioBuscaEvento.addEventListener("submit", async (event) => {
+  // Previne o comportamento padrão do formulário (recarrega a página)
+  event.preventDefault();
+
+  // Coleta o valor do campo de entrada
+  const inputTexto = document.getElementById("buscarEventoInput").value;
+
+  // Chama a função para buscar eventos históricos com o texto fornecido
+  const eventos = await buscarEventosHistoricos(inputTexto);
+
+  // Exibe os eventos na página ou em um modal, conforme necessário
+  exibirEventosNaPagina(eventos);
+});
+
+// Função assíncrona para buscar eventos históricos
+async function buscarEventosHistoricos(texto) {
+  // Chave da API
+  const apiKey = "RpA2AxVD+aYUC7zfMiDMEA==IdtUfJiaOgltBG0t";
+
+  const url = `https://api.api-ninjas.com/v1/historicalevents?text=${encodeURIComponent(
+    texto
+  )}&apiKey=${apiKey}`;
+
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "X-Api-Key": apiKey, // Alterado para X-Api-Key
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data; // Retorna os dados para manipulação posterior
+  } catch (error) {
+    console.error("Erro ao buscar eventos históricos:", error);
+    return null;
+  }
+}
+
+// Função para exibir eventos na página
+function exibirEventosNaPagina(eventos) {
+  if (eventos && eventos.length > 0) {
+    // Aqui você pode decidir como exibir os eventos na página
+    // Por exemplo, exibindo-os em uma lista ou em um modal
+    console.log("Eventos encontrados:", eventos);
+    // Implemente a lógica de exibição conforme necessário
+  } else {
+    alert("Nenhum evento encontrado com o texto fornecido.");
+  }
 }
