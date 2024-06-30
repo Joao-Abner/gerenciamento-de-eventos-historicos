@@ -167,18 +167,10 @@ body {
 
 /* Eventos Históricos */
 #historicalEvents {
-  max-width: 75rem;
-  margin: 2rem auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  min-height: 20rem;
-  background-color: var(--klistapp-jacksons-purple);
-  color: var(--klistapp-nero, #ffffff);
-  font-family: "Arial", sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 1.125rem;
   line-height: 1.6;
-  border-radius: 0.5rem;
   overflow-y: auto;
-  font-family: Arial, sans-serif;
   margin-top: 2.5rem;
   position: absolute;
   top: 50%;
@@ -190,6 +182,26 @@ body {
   color: var(--klistapp-mine-shaft);
   padding: 1.25rem;
   border-radius: var(--bs-border-radius);
+}
+
+#api-historicalEvents {
+  font-family: Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  overflow-y: auto;
+  margin-top: 2.5rem;
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: none;
+  width: 80%;
+  height: 90%;
+  background-color: var(--klistapp-nero); /* Usando a mesma cor de fundo */
+  color: var(--klistapp-mine-shaft); /* Usando a mesma cor de texto */
+  padding: 1.25rem;
+  border-radius: var(--bs-border-radius);
+  max-width: 800px;
+  margin: auto;
 }
 
 .event-item {
@@ -210,6 +222,10 @@ h3.event-title {
 
 /* Responsividade */
 @media screen and (min-width: 600px) {
+  body {
+    font-size: calc(1rem + 0.5vw);
+  }
+
   .new-event-button,
   .search-events,
   .menu-all-button {
@@ -222,6 +238,10 @@ h3.event-title {
 }
 
 @media screen and (min-width: 900px) {
+  body {
+    font-size: calc(1rem + 0.4vw);
+  }
+
   .new-event-button,
   .search-events,
   .menu-all-button {

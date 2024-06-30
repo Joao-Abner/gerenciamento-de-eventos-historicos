@@ -36,7 +36,7 @@
                                 Novo
                                 Evento</button></li>
                         <li>
-                            <button type="button" class="btn search-events">
+                            <button type="button" class="btn search-events" id="search-events">
                                 <i class="bi bi-search"></i> Buscar Evento
                             </button>
                         </li>
@@ -53,8 +53,69 @@
                     alt="Logo HistorySync">
             </div>
         </div>
+        <!-- Modal Buscar evento -->
+        <div id="buscarEventoModal" class="modal fade" tabindex="-1" role="dialog"
+            aria-labelledby="buscarEventoModalLabel" aria-hidden="true">
 
-        <!-- Modal Structure -->
+            <!-- Conteúdo do Modal -->
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="buscarEventoModalLabel">Buscar Evento</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="buscarEventoForm" class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="buscarEventoInput" class="form-label">Nome do Evento</label>
+                                <input type="text" class="form-control" id="buscarEventoInput"
+                                    placeholder="Digite palavras-chave sobre o evento..." required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="offsetSelect" class="form-label">Offset</label>
+                                <select class="form-select" id="offsetSelect" required>
+                                    <option value="0">Começar do início</option>
+                                    <option value="5">Pular 5 resultados</option>
+                                    <option value="10">Pular 10 resultados</option>
+                                    <option value="15">Pular 15 resultados</option>
+                                    <option value="20">Pular 20 resultados</option>
+                                    <option value="25">Pular 25 resultados</option>
+                                    <option value="30">Pular 30 resultados</option>
+                                    <option value="35">Pular 35 resultados</option>
+                                    <option value="40">Pular 40 resultados</option>
+                                    <option value="45">Pular 45 resultados</option>
+                                    <option value="50">Pular 50 resultados</option>
+                                </select>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="searchYear" class="form-label">Ano</label>
+                                <input type="number" class="form-control" id="searchYear" placeholder="Digite o ano...">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="searchMonth" class="form-label">Mês</label>
+                                <input type="number" class="form-control" id="searchMonth"
+                                    placeholder="Digite o mês...">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="searchDay" class="form-label">Dia</label>
+                                <input type="number" class="form-control" id="searchDay" placeholder="Digite o dia...">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary mt-auto save-button">Salvar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Modal Novo Evento -->
         <div class="modal fade" id="novoEventoModal" tabindex="-1" role="dialog" aria-labelledby="novoEventoModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -79,12 +140,14 @@
                                     placeholder="AAAA ou -AAAA">
                             </div>
                             <div class="mb-3">
-                                <label for="eventoDescricao" class="form-label">Descrição do evento histórico:</label>
+                                <label for="eventoDescricao" class="form-label">Descrição do evento
+                                    histórico:</label>
                                 <textarea class="form-control" id="eventoDescricao" rows="5"
                                     pattern="[A-Za-z0-9\sáéíóúâêôç]+"
                                     title="A descrição é obrigatória. Letras, números e espaços são permitidos."
                                     required placeholder="Descreva o evento histórico aqui..."></textarea>
-                                <p class="errormsg" style="display:none;">Descrição inválida. Só são permitidos letras,
+                                <p class="errormsg" style="display:none;">Descrição inválida. Só são permitidos
+                                    letras,
                                     números e espaços.</p>
                             </div>
                             <!-- Botão de submissão alinhado à direita -->
@@ -103,6 +166,7 @@
     </header>
 
     <div id="historicalEvents"></div>
+    <div id="api-historicalEvents"></div>
 
 
 
