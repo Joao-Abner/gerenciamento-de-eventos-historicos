@@ -278,10 +278,12 @@ h3.event-title {
     height: 100vh;
   }
 
-  #historicalEvents,
+  #historicalEvents {
+    top: 28%;
+  }
+
   #api-historicalEvents {
-    top: 50%;
-    left: 50%;
+    top: 57%;
   }
 }
 
