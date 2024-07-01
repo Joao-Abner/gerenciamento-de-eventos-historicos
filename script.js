@@ -124,12 +124,13 @@ fetch("http://localhost:3000/events")
   .then((data) => {
     const historicalEventsDiv = document.getElementById("historicalEvents");
 
+    historicalEventsDiv.innerHTML = ""; // Limpa a div antes de adicionar novos dados
+
     // Cria um elemento de título e define seu conteúdo
-    const titleElement = document.createElement("h2"); // Escolha o nível de título apropriado
-    titleElement.textContent = "Eventos Históricos"; // Substitua por seu título de identificação
+    const titleElement = document.createElement("h1"); // Escolha o nível de título apropriado
+    titleElement.textContent = "Eventos Históricos Adicionados"; // Substitua por seu título de identificação
     historicalEventsDiv.appendChild(titleElement); // Adiciona o título à div
 
-    historicalEventsDiv.innerHTML = ""; // Limpa a div antes de adicionar novos dados
     data.forEach((elemento) => {
       // Cria um container para cada elemento
       const elementoContainer = document.createElement("div");
@@ -242,22 +243,47 @@ async function buscarEventosHistoricos(texto) {
   }
 }
 
-// Função para exibir eventos na página
+/// Função para exibir eventos na página
 function exibirEventosNaPagina(eventos) {
   if (eventos && eventos.length > 0) {
     const container = document.getElementById("api-historicalEvents");
     container.innerHTML = ""; // Limpa o container antes de adicionar novos itens
 
+    // Cria um elemento de título e define seu conteúdo
+    const titleElement = document.createElement("h1");
+    titleElement.textContent = "Eventos Históricos via API";
+    container.insertBefore(titleElement, container.firstChild); // Insere o título como o primeiro filho
+
     eventos.forEach((evento) => {
-      const cardEvento = document.createElement("div");
-      cardEvento.className = "card"; // Supondo que você queira usar cards para exibir os eventos
-      cardEvento.innerHTML = `
-        <div class="card-body">
-          <h5 class="card-title">Ano: ${evento.year} Mês: ${evento.month} Dia: ${evento.day}</h5>
-          <p class="card-text">${evento.event}</p>
-        </div>
-      `;
-      container.appendChild(cardEvento);
+      const eventoItem = document.createElement("div");
+      eventoItem.className = "event-item"; // Usando 'event-item' para exibir os eventos
+
+      // Cria e configura o título do evento
+      const eventTitle = document.createElement("h3");
+      eventTitle.className = "event-title";
+      eventTitle.textContent = `Ano: ${evento.year} Mês: ${evento.month} Dia: ${evento.day}`;
+      eventoItem.appendChild(eventTitle);
+
+      // Cria e configura a descrição do evento
+      const eventDescription = document.createElement("p");
+      eventDescription.className = "event-description";
+      eventDescription.textContent = `${evento.event}`;
+      eventoItem.appendChild(eventDescription);
+
+      // Cria o botão de deleção
+      const deleteButton = document.createElement("button");
+      deleteButton.className = "delete-btn"; // Adiciona a classe 'delete-btn'
+      deleteButton.textContent = "Deletar";
+      deleteButton.addEventListener("click", function () {
+        // Adiciona o manipulador de eventos
+        this.parentElement.remove(); // Remove o elemento pai (event-item)
+      });
+
+      // Adiciona o botão de deleção ao evento
+      eventoItem.appendChild(deleteButton);
+
+      // Adiciona o eventoItem ao container
+      container.appendChild(eventoItem);
     });
     console.log("Eventos encontrados:", eventos);
     // Implemente a lógica de exibição conforme necessário
