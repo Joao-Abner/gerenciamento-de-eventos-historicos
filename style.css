@@ -173,34 +173,32 @@ body {
   overflow-y: auto;
   margin-top: 2.5rem;
   position: absolute;
-  top: 50%;
-  left: 53%;
+  top: 30%;
+  left: 55%;
   transform: translate(-50%, -50%);
-  width: 70%;
-  height: 85%;
+  width: 50%;
+  height: 46%;
   background-color: var(--klistapp-nero);
   color: var(--klistapp-mine-shaft);
   padding: 1.25rem;
   border-radius: var(--bs-border-radius);
 }
-
 #api-historicalEvents {
   font-family: Arial, sans-serif;
   font-size: 1.125rem;
   line-height: 1.6;
   overflow-y: auto;
   margin-top: 2.5rem;
-  position: relative;
-  top: 0;
-  left: 0;
+  position: absolute;
+  top: 60%;
+  left: 30%;
   transform: none;
-  width: 80%;
-  height: 90%;
-  background-color: var(--klistapp-nero); /* Usando a mesma cor de fundo */
-  color: var(--klistapp-mine-shaft); /* Usando a mesma cor de texto */
+  width: 50%;
+  height: 47%;
+  background-color: var(--klistapp-nero);
+  color: var(--klistapp-mine-shaft);
   padding: 1.25rem;
   border-radius: var(--bs-border-radius);
-  max-width: 800px;
   margin: auto;
 }
 

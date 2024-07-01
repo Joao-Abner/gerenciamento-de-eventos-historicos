@@ -245,8 +245,20 @@ async function buscarEventosHistoricos(texto) {
 // Função para exibir eventos na página
 function exibirEventosNaPagina(eventos) {
   if (eventos && eventos.length > 0) {
-    // Aqui você pode decidir como exibir os eventos na página
-    // Por exemplo, exibindo-os em uma lista ou em um modal
+    const container = document.getElementById("api-historicalEvents");
+    container.innerHTML = ""; // Limpa o container antes de adicionar novos itens
+
+    eventos.forEach((evento) => {
+      const cardEvento = document.createElement("div");
+      cardEvento.className = "card"; // Supondo que você queira usar cards para exibir os eventos
+      cardEvento.innerHTML = `
+        <div class="card-body">
+          <h5 class="card-title">Ano: ${evento.year} Mês: ${evento.month} Dia: ${evento.day}</h5>
+          <p class="card-text">${evento.event}</p>
+        </div>
+      `;
+      container.appendChild(cardEvento);
+    });
     console.log("Eventos encontrados:", eventos);
     // Implemente a lógica de exibição conforme necessário
   } else {
