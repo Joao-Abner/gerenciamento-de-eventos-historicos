@@ -22,93 +22,18 @@
                 </button>
             </div>
             <div class="title-container">
-                <span class="history-sync-tittle">HistorySync</span>
+                <span class="event-title">HistorySync</span>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar...">
+                <button class="search-button" onclick="toggleSearch()">
+                    <i class="bi bi-search"></i>
+                </button>
+
             </div>
         </nav>
-
-        <!-- menu lateral esquerdo -->
-        <div class="menu-lateral-esquerdo">
-            <div class="menu-principal">
-                <!-- Navegação -->
-                <nav class="navegacao">
-                    <ul id="ul-navegacao">
-                        <li><button type="button" class="btn new-event-button"><i class="bi bi-plus-square-fill"></i>
-                                Novo
-                                Evento</button></li>
-                        <li>
-                            <button type="button" class="btn search-events">
-                                <i class="bi bi-search"></i> Buscar Evento
-                            </button>
-                        </li>
-
-                        <li><button type="button" class="btn menu-all-button"><i class="bi bi-grid-fill"></i>
-                                Todos</button>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <!-- Logo do Projeto -->
-            <div class="logo-container">
-                <img src="https://res.cloudinary.com/daqpjdyeu/image/upload/v1718848182/HistorySync/logo-historySync_il8vzc.png"
-                    alt="Logo HistorySync">
-            </div>
-        </div>
-
-        <!-- Modal Structure -->
-        <div class="modal fade" id="novoEventoModal" tabindex="-1" role="dialog" aria-labelledby="novoEventoModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="novoEventoModalLabel">Novo Evento</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="eventoForm" class="d-flex flex-column">
-                            <div class="mb-3">
-                                <label for="eventoTitulo" class="form-label">Título:</label>
-                                <input type="text" class="form-control" id="eventoTitulo"
-                                    pattern="[A-Za-z\sáéíóúâêôç]{3,50}"
-                                    title="Deve conter entre 3 a 50 caracteres e somente letras e espaços." required
-                                    placeholder="Digite o título do evento aqui...">
-                            </div>
-                            <div class="mb-3">
-                                <label for="eventoAno" class="form-label">Ano:</label>
-                                <input type="text" class="form-control" id="eventoAno" pattern="-?\d{4}"
-                                    title="Insira um ano válido com 4 dígitos, incluindo valores negativos." required
-                                    placeholder="AAAA ou -AAAA">
-                            </div>
-                            <div class="mb-3">
-                                <label for="eventoDescricao" class="form-label">Descrição do evento histórico:</label>
-                                <textarea class="form-control" id="eventoDescricao" rows="5"
-                                    pattern="[A-Za-z0-9\sáéíóúâêôç]+"
-                                    title="A descrição é obrigatória. Letras, números e espaços são permitidos."
-                                    required placeholder="Descreva o evento histórico aqui..."></textarea>
-                                <p class="errormsg" style="display:none;">Descrição inválida. Só são permitidos letras,
-                                    números e espaços.</p>
-                            </div>
-                            <!-- Botão de submissão alinhado à direita -->
-                            <button type="submit" class="btn btn-primary mt-auto save-button">Salvar</button>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-
-
     </header>
-
-    <div id="historicalEvents"></div>
-
-
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./script.js"></script>
     <script src="./script.js"></script>
 
 </body>
