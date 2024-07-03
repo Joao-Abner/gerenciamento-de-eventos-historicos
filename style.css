@@ -10,6 +10,11 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  background-image: url("https://res.cloudinary.com/daqpjdyeu/image/upload/v1719009366/HistorySync/business-background_d8h7h3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 1rem; /* Tamanho padrão da fonte */
 }
 
 /* Navbar Styles */
@@ -22,11 +27,12 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 5.125rem;
-  position: relative;
+  position: sticky; /* Fixa a navbar no topo da página */
+  z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
+  top: 0; /* Define a posição inicial da navbar */
 }
 
 /* Button and Icon Styles */
-
 .menu-button,
 .share-button,
 .search-button {
@@ -37,9 +43,15 @@ body {
   outline: none;
 }
 
+.delete-btn {
+  padding: 0.1875rem;
+  border-color: var(--klistapp-jacksons-purple);
+  border-radius: var(--bs-border-radius);
+}
+
 .bi {
-  color: var(--klistapp-nero); /* Cor do ícone */
-  background-color: transparent; /* Fundo do ícone */
+  color: var(--klistapp-nero);
+  background-color: transparent;
 }
 
 .menu-icon {
@@ -59,7 +71,7 @@ body {
   overflow: hidden;
 }
 
-.event-title {
+.history-sync-tittle {
   color: var(--klistapp-nero, #ffffff);
   text-align: left;
   font-family: "Actor-Regular", sans-serif;
@@ -72,12 +84,67 @@ body {
   justify-content: flex-start;
 }
 
-.search-container {
+/* Menu Lateral Esquerdo */
+.menu-lateral-esquerdo {
+  font-size: 14px;
+  width: 16%; /* Ocupa toda a largura de 16% da tela */
+  height: 100vh; /* Altura total da viewport */
   position: relative;
-  display: inline-block;
+  background-color: var(--klistapp-wild-sand);
+  z-index: 999;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
 }
-.search-input {
-  font-size: 1.125rem;
+
+.menu-lateral-esquerdo.oculto {
+  transform: translateX(-110%); /* Move o menu lateral para fora da tela */
+}
+
+/* Navegação */
+.navegacao ul {
+  list-style-type: none;
+  padding: 20px;
+}
+
+.navegacao li {
+  margin-bottom: 0.625rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Botões */
+.new-event-button,
+.search-events,
+.menu-all-button,
+.save-button,
+.delete-btn {
+  color: var(--klistapp-mine-shaft);
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.new-event-button i,
+.search-events i,
+.menu-all-button i {
+  color: inherit;
+}
+
+.new-event-button:hover,
+.search-events:hover,
+.menu-all-button:hover,
+.save-button:hover,
+.delete-btn:hover {
+  color: var(--klistapp-nero);
+  background-color: var(--klistapp-bay-of-many);
+}
+
+.logo-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0.625rem;
 }
 
 .logo-container img {
