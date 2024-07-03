@@ -1,0 +1,312 @@
+@import url("./vars.css");
+
+/* Estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-image: url("https://res.cloudinary.com/daqpjdyeu/image/upload/v1719009366/HistorySync/business-background_d8h7h3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 1rem; /* Tamanho padrão da fonte */
+}
+
+/* Navbar Styles */
+.navbar {
+  background: var(--klistapp-jacksons-purple);
+  padding: 0.5625rem 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0rem;
+  align-items: center;
+  justify-content: space-between;
+  height: 5.125rem;
+  position: sticky; /* Fixa a navbar no topo da página */
+  z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
+  top: 0; /* Define a posição inicial da navbar */
+}
+
+/* Button and Icon Styles */
+.menu-button,
+.share-button,
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+.delete-btn {
+  padding: 0.1875rem;
+  border-color: var(--klistapp-jacksons-purple);
+  border-radius: var(--bs-border-radius);
+}
+
+.bi {
+  color: var(--klistapp-nero);
+  background-color: transparent;
+}
+
+.menu-icon {
+  border: none;
+  cursor: pointer;
+}
+
+/* Text Styles */
+.title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.history-sync-tittle {
+  color: var(--klistapp-nero, #ffffff);
+  text-align: left;
+  font-family: "Actor-Regular", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  position: relative;
+  max-width: 13.4612rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Menu Lateral Esquerdo */
+.menu-lateral-esquerdo {
+  font-size: 14px;
+  width: 16%; /* Ocupa toda a largura de 16% da tela */
+  height: 100vh; /* Altura total da viewport */
+  position: relative;
+  background-color: var(--klistapp-wild-sand);
+  z-index: 999;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-lateral-esquerdo.oculto {
+  transform: translateX(-110%); /* Move o menu lateral para fora da tela */
+}
+
+/* Navegação */
+.navegacao ul {
+  list-style-type: none;
+  padding: 20px;
+}
+
+.navegacao li {
+  margin-bottom: 0.625rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Botões */
+.new-event-button,
+.search-events,
+.menu-all-button,
+.save-button,
+.delete-btn {
+  color: var(--klistapp-mine-shaft);
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.new-event-button i,
+.search-events i,
+.menu-all-button i {
+  color: inherit;
+}
+
+.new-event-button:hover,
+.search-events:hover,
+.menu-all-button:hover,
+.save-button:hover,
+.delete-btn:hover {
+  color: var(--klistapp-nero);
+  background-color: var(--klistapp-bay-of-many);
+}
+
+.logo-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0.625rem;
+}
+
+.logo-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.errormsg {
+  color: red;
+  padding: 0.625rem;
+  margin-top: 0.3125rem;
+  font-size: 0.875rem;
+  display: none;
+}
+
+/* Eventos Históricos */
+#historicalEvents {
+  font-family: Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  overflow-y: auto;
+  margin-top: 2.5rem;
+  position: absolute;
+  top: 30%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 46%;
+  background-color: var(--klistapp-nero);
+  color: var(--klistapp-mine-shaft);
+  padding: 1.25rem;
+  border-radius: var(--bs-border-radius);
+}
+#api-historicalEvents {
+  font-family: Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  overflow-y: auto;
+  margin-top: 2.5rem;
+  position: absolute;
+  top: 60%;
+  left: 30%;
+  transform: none;
+  width: 50%;
+  height: 47%;
+  background-color: var(--klistapp-nero);
+  color: var(--klistapp-mine-shaft);
+  padding: 1.25rem;
+  border-radius: var(--bs-border-radius);
+  margin: auto;
+}
+
+.event-item {
+  background-color: #f9f9f9;
+  border-radius: 0.3125rem;
+  padding: 0.625rem;
+  margin-bottom: 0.625rem;
+}
+
+h3.event-title {
+  font-weight: bold;
+  color: var(--klistapp-mine-shaft);
+}
+
+.event-description {
+  color: var(--klistapp-mine-shaft);
+}
+
+/* Responsividade */
+
+/* Para telas com largura mínima de 600px */
+@media screen and (min-width: 600px) {
+  /* Aumenta o tamanho da fonte do corpo do documento e de alguns elementos específicos */
+  body {
+    font-size: calc(
+      1rem + 0.5vw
+    ); /* Tamanho da fonte do corpo aumenta proporcionalmente à largura da janela */
+  }
+
+  .new-event-button,
+  .search-events,
+  .menu-all-button {
+    font-size: calc(
+      1rem + 0.5vw
+    ); /* Tamanho da fonte desses botões aumenta proporcionalmente à largura da janela */
+  }
+
+  #historicalEvents,
+  #api-historicalEvents {
+    font-size: calc(
+      1rem + 0.5vw
+    ); /* Tamanho da fonte desses elementos aumenta proporcionalmente à largura da janela */
+  }
+}
+
+/* Para telas com largura mínima de 900px */
+@media screen and (min-width: 900px) {
+  /* Ajusta o tamanho da fonte do corpo do documento e de alguns elementos específicos */
+  body {
+    font-size: calc(
+      1rem + 0.4vw
+    ); /* Tamanho da fonte do corpo diminui ligeiramente em relação ao anterior */
+  }
+
+  .new-event-button,
+  .search-events,
+  .menu-all-button {
+    font-size: calc(
+      1rem + 0.4vw
+    ); /* Tamanho da fonte desses botões diminui ligeiramente em relação ao anterior */
+  }
+
+  #historicalEvents,
+  #api-historicalEvents {
+    font-size: calc(
+      1.125rem + 0.4vw
+    ); /* Tamanho da fonte desses elementos aumenta um pouco em relação ao anterior */
+  }
+}
+
+/* Para telas com largura máxima de 768px */
+@media screen and (max-width: 768px) {
+  /* Ajusta o layout da barra de navegação e posiciona o logo */
+  .navbar {
+    flex-wrap: wrap; /* Permite que os itens da barra de navegação sejam dispostos em várias linhas */
+  }
+
+  .logo-container {
+    bottom: 0.625rem; /* Posiciona o contêiner do logo mais próximo do fundo */
+  }
+
+  .menu-lateral-esquerdo {
+    width: 57%; /* Define a largura do menu lateral esquerdo */
+    height: 100vh; /* Define a altura total da viewport */
+  }
+}
+
+/* Para telas com largura mínima de 767px e máxima de 1024px */
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  /* Ajusta o layout da barra de navegação e posiciona os elementos históricos */
+  .navbar {
+    justify-content: space-between; /* Distribui os itens da barra de navegação uniformemente */
+  }
+
+  .menu-lateral-esquerdo {
+    width: 35%; /* Reduz a largura do menu lateral esquerdo */
+    height: 100vh; /* Mantém a altura total da viewport */
+  }
+
+  #historicalEvents {
+    top: 28%; /* Posiciona o elemento histórico superiormente */
+  }
+
+  #api-historicalEvents {
+    top: 57%; /* Posiciona o elemento histórico inferiormente */
+  }
+}
+
+/* Para telas com largura mínima de 1025px */
+@media screen and (min-width: 1025px) {
+  /* Ajusta o layout da barra de navegação */
+  .navbar {
+    justify-content: space-around; /* Distribui os itens da barra de navegação com espaço igual em todos os lados */
+  }
+}
