@@ -38,12 +38,7 @@ document
     this.classList.toggle("oculto");
   });
 
-// Função para validar a descrição, permitindo apenas letras, números e espaços
-// function validaDescrizao(descricao) {
-//   const regex = /^[A-Za-z0-9\ssáéíóúâêôç]+$/;
-//   return regex.test(descricao);
-// }
-
+// Manipula eventos do form 'eventoForm'
 document
   .getElementById("eventoForm")
   .addEventListener("submit", async function (event) {
@@ -97,27 +92,6 @@ document
     }
   });
 
-// Função para ler e exibir os dados do localStorage
-// window.addEventListener("DOMContentLoaded", (event) => {
-//   function exibirDadosLocalStorage() {
-//     const dadosArmazenados = localStorage.getItem("eventoFormDados");
-//     if (dadosArmazenados) {
-//       const dadosObjeto = JSON.parse(dadosArmazenados);
-//       const divEventos = document.getElementById("historicalEvents");
-//       divEventos.innerHTML = ""; // Limpa a div antes de adicionar novos dados
-//       Object.entries(dadosObjeto).forEach(([chave, valor]) => {
-//         const paragrafo = document.createElement("p");
-//         paragrafo.textContent = `${chave}: ${valor}`;
-//         divEventos.appendChild(paragrafo);
-//       });
-//     } else {
-//       divEventos.innerHTML = "<p>Nenhum dado encontrado.</p>";
-//     }
-//   }
-
-//   exibirDadosLocalStorage();
-// });
-
 // Requisição para o JSON server
 fetch("http://localhost:3000/events")
   .then((response) => response.json())
@@ -167,6 +141,7 @@ fetch("http://localhost:3000/events")
   })
   .catch((error) => console.error("Erro ao carregar eventos:", error));
 
+// função para deletar um item do json-server
 function handleDelete(itemId) {
   fetch(`http://localhost:3000/events/${itemId}`, {
     method: "DELETE",
