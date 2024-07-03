@@ -12,11 +12,6 @@ body {
   line-height: 1.6;
 }
 
-.container {
-  max-width: 75rem;
-  margin: auto;
-}
-
 /* Navbar Styles */
 .navbar {
   background: var(--klistapp-jacksons-purple);
@@ -84,21 +79,167 @@ body {
 .search-input {
   font-size: 1.125rem;
 }
-.search-button i {
-  font-size: 1.125rem;
+
+.logo-container img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Responsive Adjustments */
+.errormsg {
+  color: red;
+  padding: 0.625rem;
+  margin-top: 0.3125rem;
+  font-size: 0.875rem;
+  display: none;
+}
+
+/* Eventos Históricos */
+#historicalEvents {
+  font-family: Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  overflow-y: auto;
+  margin-top: 2.5rem;
+  position: absolute;
+  top: 30%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 46%;
+  background-color: var(--klistapp-nero);
+  color: var(--klistapp-mine-shaft);
+  padding: 1.25rem;
+  border-radius: var(--bs-border-radius);
+}
+#api-historicalEvents {
+  font-family: Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  overflow-y: auto;
+  margin-top: 2.5rem;
+  position: absolute;
+  top: 60%;
+  left: 30%;
+  transform: none;
+  width: 50%;
+  height: 47%;
+  background-color: var(--klistapp-nero);
+  color: var(--klistapp-mine-shaft);
+  padding: 1.25rem;
+  border-radius: var(--bs-border-radius);
+  margin: auto;
+}
+
+.event-item {
+  background-color: #f9f9f9;
+  border-radius: 0.3125rem;
+  padding: 0.625rem;
+  margin-bottom: 0.625rem;
+}
+
+h3.event-title {
+  font-weight: bold;
+  color: var(--klistapp-mine-shaft);
+}
+
+.event-description {
+  color: var(--klistapp-mine-shaft);
+}
+
+/* Responsividade */
+
+/* Para telas com largura mínima de 600px */
+@media screen and (min-width: 600px) {
+  /* Aumenta o tamanho da fonte do corpo do documento e de alguns elementos específicos */
+  body {
+    font-size: calc(
+      1rem + 0.5vw
+    ); /* Tamanho da fonte do corpo aumenta proporcionalmente à largura da janela */
+  }
+
+  .new-event-button,
+  .search-events,
+  .menu-all-button {
+    font-size: calc(
+      1rem + 0.5vw
+    ); /* Tamanho da fonte desses botões aumenta proporcionalmente à largura da janela */
+  }
+
+  #historicalEvents,
+  #api-historicalEvents {
+    font-size: calc(
+      1rem + 0.5vw
+    ); /* Tamanho da fonte desses elementos aumenta proporcionalmente à largura da janela */
+  }
+}
+
+/* Para telas com largura mínima de 900px */
+@media screen and (min-width: 900px) {
+  /* Ajusta o tamanho da fonte do corpo do documento e de alguns elementos específicos */
+  body {
+    font-size: calc(
+      1rem + 0.4vw
+    ); /* Tamanho da fonte do corpo diminui ligeiramente em relação ao anterior */
+  }
+
+  .new-event-button,
+  .search-events,
+  .menu-all-button {
+    font-size: calc(
+      1rem + 0.4vw
+    ); /* Tamanho da fonte desses botões diminui ligeiramente em relação ao anterior */
+  }
+
+  #historicalEvents,
+  #api-historicalEvents {
+    font-size: calc(
+      1.125rem + 0.4vw
+    ); /* Tamanho da fonte desses elementos aumenta um pouco em relação ao anterior */
+  }
+}
+
+/* Para telas com largura máxima de 768px */
 @media screen and (max-width: 768px) {
+  /* Ajusta o layout da barra de navegação e posiciona o logo */
   .navbar {
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permite que os itens da barra de navegação sejam dispostos em várias linhas */
   }
 
-  .search-input {
-    font-size: 0.9375rem;
+  .logo-container {
+    bottom: 0.625rem; /* Posiciona o contêiner do logo mais próximo do fundo */
   }
 
-  .bi {
-    font-size: 0.9375rem;
+  .menu-lateral-esquerdo {
+    width: 57%; /* Define a largura do menu lateral esquerdo */
+    height: 100vh; /* Define a altura total da viewport */
+  }
+}
+
+/* Para telas com largura mínima de 767px e máxima de 1024px */
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  /* Ajusta o layout da barra de navegação e posiciona os elementos históricos */
+  .navbar {
+    justify-content: space-between; /* Distribui os itens da barra de navegação uniformemente */
+  }
+
+  .menu-lateral-esquerdo {
+    width: 35%; /* Reduz a largura do menu lateral esquerdo */
+    height: 100vh; /* Mantém a altura total da viewport */
+  }
+
+  #historicalEvents {
+    top: 28%; /* Posiciona o elemento histórico superiormente */
+  }
+
+  #api-historicalEvents {
+    top: 57%; /* Posiciona o elemento histórico inferiormente */
+  }
+}
+
+/* Para telas com largura mínima de 1025px */
+@media screen and (min-width: 1025px) {
+  /* Ajusta o layout da barra de navegação */
+  .navbar {
+    justify-content: space-around; /* Distribui os itens da barra de navegação com espaço igual em todos os lados */
   }
 }
