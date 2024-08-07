@@ -2,10 +2,6 @@
 
 Este projeto tem como objetivo implementar progressivamente uma aplicação web sobre organizar e mostrar eventos importantes da história.
 
-## Endereço de Deploy - GitHub Pages
-
-`em desenvolvimento`
-
 ## Protótipo
 
 https://www.figma.com/design/fPd7TJurYzAqUGI1rGBsaf/Gerenciamento-de-Eventos-Hist%C3%B3ricos?node-id=0-1
